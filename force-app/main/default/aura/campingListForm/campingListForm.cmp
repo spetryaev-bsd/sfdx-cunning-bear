@@ -1,0 +1,44 @@
+<aura:component >
+    <aura:attribute name="newItem" type="Camping_Item__c"
+                    default="{ 'sobjectType': 'Camping_Item__c',               
+                             'Price__c': 0,
+                             'Quantity__c': 0}"/>
+    <aura:registerEvent name="addItem" type="c:addItemEvent"/>
+    
+    
+	<div aria-labelledby="newItemform"> 
+    	<fieldset class="slds=box slds-theme default slds-container--small">
+            <legend id="newItemform" class="slds-text-heading--small 
+              slds-p-vertical--medium">
+              Add Capming Item
+            </legend>
+        	<form class="slds-form--stacked">
+            	<lightning:input aura:id="itemForm" label="Camping Item Name"
+                             name="itemName"
+                             value="{!v.newItem.Name}"
+                             required="true"/>
+        		<lightning:input aura:id="itemForm" label="Quantity"
+                             type="number"
+                             min="1"
+                             name="itemQuantity"
+                             value="{!v.newItem.Quantity__c}"
+                             />
+                <lightning:input aura:id="itemForm" label="Price"
+                             type="number"
+                             formatter="currency"
+                             name="itemCurrency"
+                             value="{!v.newItem.Price__c}"
+                             />
+                <lightning:input aura:id="itemForm" label="Packed?"
+                             type="checkbox"
+                             name="itemPacked"
+                             checked="{!v.newItem.Packed__c}"
+                             />
+                <lightning:button label="Create Camping Item" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.clickCreateItem}"/>
+        	</form>
+        </fieldset>
+    </div>
+</aura:component>

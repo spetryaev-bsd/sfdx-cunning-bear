@@ -1,0 +1,13 @@
+{
+  "orgName": "Demo company",
+  "edition": "Developer",
+  "features": [],
+  "hasSampleData": "false",
+  "settings": {
+    "orgPreferenceSettings": {
+      "s1DesktopEnabled": true,
+      "selfSetPasswordInApi": true,
+      "s1EncryptedStoragePref2": false
+    }
+  }
+}
