@@ -9,7 +9,8 @@ global with sharing class AccountManager {
         Account acc = [SELECT ID, Name, (SELECT ID, Name FROM Contacts) 
                        FROM Account 
                        WHERE ID = :accId];
-	System.debug('This is a change');
+        System.debug('This is a change');
+        System.debug('This is another change');
         return acc;
     }
     
